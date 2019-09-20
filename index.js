@@ -30,7 +30,8 @@ function sendMsg(data, message) {
       var response = res['output']['generic'][0]['text'];
       var confidence = res['output']['intents'][0]['confidence'];
 
-      if (confidence >= 0.95) {
+      console.log(confidence)
+      if (confidence >= 0.82) {
         console.log(response)
         console.log(confidence);
         message.channel.send(response);
