@@ -45,7 +45,7 @@ function sendMsg(data, message) {
 }
 
 assistant.createSession({
-  assistant_id: 'ce72666d-1a11-4c83-bd51-bb04c6675b80'
+  assistant_id: process.env.IBM_ASSISTANT_ID
 }).then(res => {
   session_id = res['session_id']; // JSON.stringify(res, null, 2)['session_id'];
 }).catch(err => {
