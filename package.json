@@ -1,0 +1,19 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Esdras Xavier",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "ibm-watson": "^4.5.1",
+    "watson-developer-cloud": "^4.0.1"
+  }
+}
