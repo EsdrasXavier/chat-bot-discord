@@ -47,7 +47,6 @@ assistant.createSession({
   assistant_id: 'ce72666d-1a11-4c83-bd51-bb04c6675b80'
 }).then(res => {
   session_id = res['session_id']; // JSON.stringify(res, null, 2)['session_id'];
-  // console.log(session_id);
 }).catch(err => {
   console.log(err);
 });
@@ -62,7 +61,23 @@ bot.on('guildMemberAdd', (member) => {
 });
 
 bot.on('message', (message) => {
-  if (message.author.bot === false && on) {
-    sendMsg(message.content, message)
+  // Avoid awnser him self and can enable or disable
+  if (message.author.bot === false) {
+    if (message.content === '!enable') {
+      if (on) message.channel.send('Ja estou ligado!')
+      else {
+        on = true;
+        message.channel.send('Ligando chat bot');
+      }
+    } else if (message.content === '!disable') {
+      if (on) {
+        on = false;
+        message.channel.send('Desligando');
+      } else {
+        message.channel.send('Ja estou ligado!')
+      }
+    } else if (on) {
+      sendMsg(message.content, message)
+    }
   }
 });
